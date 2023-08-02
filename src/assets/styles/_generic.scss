@@ -1,0 +1,87 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+/* Убираем внутренние отступы */
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class */
+ul,
+ol {
+  &[class]{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li {
+  margin: 0;
+}
+
+
+/* Элементы a, у которых есть атрибут class, сбрасываем до дефолтных стилей */
+a {
+  &[class] {
+    text-decoration: none;
+    color: inherit;
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: none;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
