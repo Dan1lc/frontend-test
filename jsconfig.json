@@ -5,9 +5,18 @@
     "baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"],
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@ui/*": ["src/components/_UiComponents/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@validation/*": ["src/helpers/validation/*"],
+      "@modules/*": ["src/store/modules/*"],
+      "@styles/*": ["src/assets/styles/*"],
+      "@icons/*": ["src/assets/icons/*"],
+      "@images/*": ["src/assets/images/*"],
+      "@fonts/*": ["src/assets/fonts/*"]
     },
     "lib": [
       "esnext",
