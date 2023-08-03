@@ -1,12 +1,20 @@
-.ui-button{
+.ui-button {
   padding: 20px 87px;
   background-color: var(--color-blue);
   border-radius: 8px;
   color: var(--color-white);
   transition: background-color .2s ease-in-out;
 
-  &:hover{
-    background-color: var(--color-blue-hover);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-blue-hover);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: var(--color-blue-hover);
+    }
   }
 
   &:focus-visible{
@@ -25,8 +33,16 @@
     border: 1px solid var(--color-gray-2);
     transition: border-color .2s ease-in-out;
 
-    &:hover{
-      border-color: var(--color-black);
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--color-black);
+      }
+    }
+
+    @media (hover: none) {
+      &:active {
+        border-color: var(--color-black);
+      }
     }
 
     &[disabled]{
