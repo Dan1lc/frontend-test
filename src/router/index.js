@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import MainPage from '@pages/MainPage';
+import UiPage from '@pages/UiPage/UiPage';
 
 const routes = [
   {
     path: '/',
     name: 'MainPage',
     component: MainPage,
+  },
+  {
+    path: '/ui',
+    name: 'UiPage',
+    component: UiPage,
   },
 ];
 
