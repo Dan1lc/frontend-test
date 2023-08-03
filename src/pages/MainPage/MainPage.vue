@@ -22,3 +22,5 @@ onMounted(() => {
   ]);
 });
 </script>
+
+<style lang="scss" src="./MainPage.scss" scoped/>
