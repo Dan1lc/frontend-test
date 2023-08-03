@@ -5,6 +5,35 @@
     }
   }
 
+  &--is-error {
+    .text-input {
+      &__input {
+        border-color: var(--color-red) !important;
+      }
+    }
+  }
+
+  &--read-only {
+    .text-input {
+      &__input {
+        border-bottom: none;
+        cursor: text;
+      }
+    }
+  }
+
+  &--disabled {
+    opacity: .5;
+
+    .text-input {
+      &__input {
+        color: var(--color-gray);
+        user-select: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+
   &__placeholder {
     font-size: 14px;
     line-height: 16px;
@@ -39,34 +68,5 @@
     font-size: 12px;
     line-height: 16px;
     color: var(--color-red);
-  }
-
-  &--is-error {
-    .text-input {
-      &__input {
-        border-color: var(--color-red) !important;
-      }
-    }
-  }
-
-  &--read-only {
-    .text-input {
-      &__input {
-        border-bottom: none;
-        cursor: text;
-      }
-    }
-  }
-
-  &--disabled {
-    opacity: .5;
-
-    .text-input {
-      &__input {
-        color: var(--color-gray);
-        user-select: none;
-        cursor: not-allowed;
-      }
-    }
   }
 }
