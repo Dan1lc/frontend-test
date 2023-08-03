@@ -19,7 +19,10 @@
       </ContainerTemplate>
     </div>
     <ContainerTemplate>
-      <BreadCrumbs class="app-header__breadcrumbs" />
+      <BreadCrumbs
+        :breadcrumbs-data="breadcrumbsData"
+        class="app-header__breadcrumbs"
+      />
     </ContainerTemplate>
   </header>
 </template>
@@ -29,6 +32,9 @@ import ContainerTemplate from '@templates/ContainerTemplate/ContainerTemplate';
 import BreadCrumbs from '@components/AppHeader/BreadCrumbs/BreadCrumbs';
 import BurgerIcon from '@icons/AppHeader/BurgerIcon.svg';
 import ProfileIcon from '@icons/AppHeader/ProfileIcon.svg';
+import useBreadcrumbs from '@hooks/useBreadcrumbs';
+
+const { breadcrumbsData } = useBreadcrumbs();
 </script>
 
 <style lang="scss" src="./AppHeader.scss" scoped/>

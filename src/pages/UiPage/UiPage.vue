@@ -102,9 +102,36 @@
 import ContainerTemplate from '@templates/ContainerTemplate/ContainerTemplate';
 import UiButton from '@ui/UiButton/UiButton';
 import TextInput from '@ui/TextInput/TextInput';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import TabsList from '@ui/TabsList/TabsList';
 import TabsItem from '@ui/TabsList/TabsItem/TabsItem';
+import useBreadcrumbs from '@hooks/useBreadcrumbs';
+
+const { setBreadcrumbsData } = useBreadcrumbs();
+
+onMounted(() => {
+  setBreadcrumbsData([
+    {
+      link:'/',
+      name: 'Входной контроль',
+    },
+    {
+      link:'/',
+      name: 'Краска БФ-500',
+    },
+    {
+      link:'/',
+      name: 'Страница для перехода',
+    },
+    {
+      link:'/',
+      name: 'Документ соответствия',
+    },
+    {
+      name: 'Дополнительно',
+    },
+  ]);
+});
 
 const textInput = ref('Текст');
 const selectArray = [
