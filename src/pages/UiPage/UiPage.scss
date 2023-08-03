@@ -1,3 +1,9 @@
 .ui-page{
-
+  &__list{
+    li{
+      &:not(:last-child){
+        margin-bottom: 20px;
+      }
+    }
+  }
 }
