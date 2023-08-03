@@ -43,6 +43,7 @@
     @media (hover: none) {
       &:active {
         border-color: var(--color-black);
+        background-color: var(--color-white);
       }
     }
 
