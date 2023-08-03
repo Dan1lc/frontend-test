@@ -11,6 +11,7 @@
       <button
         class="select-list__button"
         @click="$emit('select-value', item)"
+        @blur="blurButton"
       >
         {{ item }}
       </button>
@@ -19,7 +20,7 @@
 </template>
 
 <script setup>
-defineEmits([ 'select-value' ]);
+const emit = defineEmits([ 'select-value', 'blur' ]);
 
 defineProps({
   selectArray: {
@@ -27,6 +28,12 @@ defineProps({
     default: () => [],
   },
 });
+
+const blurButton = (e) => {
+  if (e.relatedTarget && !e.relatedTarget?.classList.contains('select-list__button')){
+    emit('blur');
+  }
+};
 </script>
 
 <style lang="scss" src="./SelectList.scss" scoped/>
