@@ -31,15 +31,55 @@
           Отменить
         </UiButton>
       </li>
+      <li>
+        <TextInput
+          v-model="textInput"
+          placeholder="Название"
+        />
+      </li>
+      <li>
+        <TextInput
+          v-model="textInput"
+          placeholder="Название"
+          hint="Подсказка"
+          is-hint
+        />
+      </li>
+      <li>
+        <TextInput
+          v-model="textInput"
+          placeholder="Название"
+          error-text="Ошибка"
+          is-error
+        />
+      </li>
+      <li>
+        <TextInput
+          value="Текст"
+          placeholder="Название"
+          read-only
+        />
+      </li>
+      <li>
+        <TextInput
+          value="Текст"
+          placeholder="Название"
+          disabled
+        />
+      </li>
     </ul>
   </div>
 </template>
 
 <script setup>
 import UiButton from '@ui/UiButton/UiButton';
+import TextInput from '@ui/TextInput/TextInput';
+import { ref } from 'vue';
+
+const textInput = ref('Текст');
 
 const testClick = () => {
-  console.log('testClick');
+  alert('Клик!');
 };
 </script>
 
