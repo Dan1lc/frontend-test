@@ -11,6 +11,9 @@
       class="text-input__input"
       type="text"
       :disabled="readOnly || disabled"
+      @click.stop
+      @focus="focusInput"
+      @blur="blurInput"
     >
     <p
       v-if="!isError && isHint"
@@ -24,11 +27,19 @@
     >
       {{ errorText }}
     </p>
+    <SelectList
+      v-if="isShowSelect"
+      :select-array="selectArray"
+      class="text-input__select"
+      @select-value="selectValue"
+      @blur="closeSelect"
+    />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
+import SelectList from '@ui/TextInput/SelectList/SelectList';
 
 const emit = defineEmits([ 'update:modelValue' ]);
 
@@ -69,6 +80,14 @@ const props = defineProps({
     type: Boolean,
     default: () => false,
   },
+  select: {
+    type: Boolean,
+    default: () => false,
+  },
+  selectArray: {
+    type: Array,
+    default: () => [],
+  },
 });
 
 const classes = computed(() => ({
@@ -85,6 +104,43 @@ const inputModel = computed({
     emit('update:modelValue', value);
   },
 });
+
+// Select scripts
+const inputFocus = ref(false);
+const isShowSelect = computed(() => {
+  return props.selectArray.length && inputFocus.value;
+});
+
+const openSelect = () => {
+  inputFocus.value = true;
+  document.addEventListener('click', closeSelect);
+};
+
+const closeSelect = () => {
+  inputFocus.value = false;
+  document.removeEventListener('click', closeSelect);
+};
+
+const focusInput = () => {
+  if (!props.select){
+    return;
+  }
+  openSelect();
+};
+
+const blurInput = (e) => {
+  if (!props.select){
+    return;
+  }
+  if (e.relatedTarget && !e.relatedTarget?.classList.contains('select-list__button')){
+    closeSelect();
+  }
+};
+
+const selectValue = (value) => {
+  inputModel.value = value;
+  closeSelect();
+};
 </script>
 
 <style lang="scss" src="./TextInput.scss" scoped/>

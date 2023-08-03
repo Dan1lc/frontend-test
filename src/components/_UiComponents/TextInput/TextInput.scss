@@ -1,4 +1,6 @@
 .text-input {
+  position: relative;
+
   &--is-error {
     .text-input {
       &__input {
@@ -65,5 +67,13 @@
     line-height: 16px;
     color: var(--color-red);
     margin-top: 8px;
+  }
+
+  &__select{
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: var(--z-up);
+    width: 100%;
   }
 }

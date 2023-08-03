@@ -34,6 +34,14 @@
       <li>
         <TextInput
           v-model="textInput"
+          placeholder="Выпадающий список"
+          select
+          :select-array="selectArray"
+        />
+      </li>
+      <li>
+        <TextInput
+          v-model="textInput"
           placeholder="Название"
         />
       </li>
@@ -77,7 +85,18 @@ import TextInput from '@ui/TextInput/TextInput';
 import { ref } from 'vue';
 
 const textInput = ref('Текст');
-
+const selectArray = [
+  'Пункт 1',
+  'Пункт 2',
+  'Пункт 3',
+  // 'Пункт 4',
+  // 'Пункт 5',
+  // 'Пункт 6',
+  // 'Пункт 7',
+  // 'Пункт 8',
+  // 'Пункт 9',
+  // 'Пункт 10',
+];
 const testClick = () => {
   alert('Клик!');
 };
