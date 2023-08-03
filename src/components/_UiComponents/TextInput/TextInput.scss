@@ -38,6 +38,7 @@
     font-size: 14px;
     line-height: 16px;
     color: var(--color-gray);
+    margin-bottom: 8px;
   }
 
   &__input {
@@ -62,11 +63,13 @@
     font-size: 12px;
     line-height: 16px;
     color: var(--color-gray);
+    margin-top: 8px;
   }
 
   &__error {
     font-size: 12px;
     line-height: 16px;
     color: var(--color-red);
+    margin-top: 8px;
   }
 }
