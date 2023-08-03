@@ -1,0 +1,46 @@
+.main-form{
+  &__inner{
+    border-bottom: 1px solid var(--color-gray-2);
+  }
+
+  &__title{
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--color-gray-2);
+  }
+
+  &__list{
+    max-width: 920px;
+    margin-bottom: 96px;
+
+    li{
+      &:not(:last-child){
+        margin-bottom: 32px;
+      }
+    }
+
+    &--last{
+      margin-bottom:  128px;
+    }
+  }
+
+  &__list-item{
+    &--double{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 16px;
+    }
+  }
+
+  &__actions{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 -8px;
+  }
+
+  &__button{
+    margin: 16px 8px 0;
+    width: 100%;
+    max-width: 450px;
+  }
+}
