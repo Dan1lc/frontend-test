@@ -7,7 +7,7 @@
       {{ placeholder }}
     </p>
     <input
-      v-model="inputModel"
+      v-model.trim="inputModel"
       class="text-input__input"
       type="text"
       :disabled="readOnly || disabled"
