@@ -47,8 +47,9 @@
     }
 
     &[disabled]{
-      opacity: .5;
-      border-color: var(--color-gray-2);
+      color: var(--color-gray-opacity);
+      border-color: var(--color-gray-2-opacity);
+      background-color: var(--color-white);
     }
   }
 }
