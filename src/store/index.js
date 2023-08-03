@@ -1,9 +1,8 @@
 import { createStore } from 'vuex';
+import breadcrumbsModule from '@modules/breadcrumbsModule';
 
 export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  modules: {
+    breadcrumbsModule,
+  },
 });
