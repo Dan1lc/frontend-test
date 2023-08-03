@@ -1,0 +1,19 @@
+.select-list {
+  background-color: var(--color-light);
+  padding: 16px;
+  border: 1px solid var(--color-gray-2);
+  border-radius: 8px;
+
+  &__button {
+    width: 100%;
+    text-align: left;
+    padding: 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: border-color .2s ease-in-out;
+
+    &:hover, &:focus-visible {
+      border-color: var(--color-black);
+    }
+  }
+}
