@@ -9,6 +9,7 @@ module.exports = defineConfig({
       .set('@', path.resolve(__dirname, 'src/'))
       // vue
       .set('@pages', path.resolve(__dirname, 'src/pages/'))
+      .set('@templates', path.resolve(__dirname, 'src/templates/'))
       .set('@components', path.resolve(__dirname, 'src/components/'))
       .set('@ui', path.resolve(__dirname, 'src/components/_UiComponents/'))
       //  utils
