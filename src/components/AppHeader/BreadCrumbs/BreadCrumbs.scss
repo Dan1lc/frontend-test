@@ -1,0 +1,13 @@
+.bread-crumbs {
+  padding: 16px 0;
+  display: flex;
+
+  li {
+    display: flex;
+  }
+
+  &__separator {
+    color: var(--color-gray-2);
+    margin: 0 8px;
+  }
+}

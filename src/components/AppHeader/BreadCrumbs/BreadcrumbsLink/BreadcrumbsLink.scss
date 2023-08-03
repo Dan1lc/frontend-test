@@ -1,0 +1,48 @@
+.breadcrumbs-link {
+  span {
+    display: block;
+    max-width: 240px;
+    width: max-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &--underline {
+    transition: color .2s ease-in-out;
+
+    span {
+      position: relative;
+      border-bottom: 1px solid var(--color-black);
+      transition: border-color .2s ease-in-out;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-gray);
+
+        span {
+          border-color: var(--color-gray);
+        }
+      }
+    }
+
+    @media (hover: none) {
+      &:active {
+        color: var(--color-gray);
+
+        span {
+          border-color: var(--color-gray);
+        }
+      }
+    }
+
+    &:focus-visible {
+      color: var(--color-gray);
+
+      span {
+        border-color: var(--color-gray);
+      }
+    }
+  }
+}
