@@ -76,6 +76,23 @@
             disabled
           />
         </li>
+        <li>
+          <TabsList>
+            <TabsItem title="Основное">
+              Основное
+            </TabsItem>
+            <TabsItem title="Основное 2">
+              Основное 2
+            </TabsItem>
+            <TabsItem
+              title="Дополнительно"
+              hint-text="Сначала заполните: Основное"
+              disabled
+            >
+              Перечень ПСД
+            </TabsItem>
+          </TabsList>
+        </li>
       </ul>
     </ContainerTemplate>
   </div>
@@ -86,6 +103,8 @@ import ContainerTemplate from '@templates/ContainerTemplate/ContainerTemplate';
 import UiButton from '@ui/UiButton/UiButton';
 import TextInput from '@ui/TextInput/TextInput';
 import { ref } from 'vue';
+import TabsList from '@ui/TabsList/TabsList';
+import TabsItem from '@ui/TabsList/TabsItem/TabsItem';
 
 const textInput = ref('Текст');
 const selectArray = [

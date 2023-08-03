@@ -1,0 +1,10 @@
+.tabs-list {
+  &__header {
+    display: flex;
+    margin: 0 -4px  96px -4px;
+
+    li {
+      margin: 0 4px;
+    }
+  }
+}
