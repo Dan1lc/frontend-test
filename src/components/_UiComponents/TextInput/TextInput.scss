@@ -1,10 +1,4 @@
 .text-input {
-  > * {
-    &:not(:last-child) {
-      margin-bottom: 8px;
-    }
-  }
-
   &--is-error {
     .text-input {
       &__input {
