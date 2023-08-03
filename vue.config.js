@@ -11,6 +11,7 @@ module.exports = defineConfig({
       .set('@pages', path.resolve(__dirname, 'src/pages/'))
       .set('@templates', path.resolve(__dirname, 'src/templates/'))
       .set('@components', path.resolve(__dirname, 'src/components/'))
+      .set('@form', path.resolve(__dirname, 'src/components/_FormComponents/'))
       .set('@ui', path.resolve(__dirname, 'src/components/_UiComponents/'))
       //  utils
       .set('@hooks', path.resolve(__dirname, 'src/hooks/'))
