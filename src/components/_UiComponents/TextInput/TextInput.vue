@@ -11,7 +11,7 @@
       class="text-input__input"
       type="text"
       :disabled="readOnly || disabled"
-      @click.stop
+      @mousedown.stop
       @focus="focusInput"
       @blur="blurInput"
     >
@@ -41,7 +41,7 @@
 import { computed, ref } from 'vue';
 import SelectList from '@ui/TextInput/SelectList/SelectList';
 
-const emit = defineEmits([ 'update:modelValue' ]);
+const emit = defineEmits([ 'update:modelValue', 'select-value' ]);
 
 const props = defineProps({
   value: {
@@ -102,6 +102,7 @@ const inputModel = computed({
   },
   set(value){
     emit('update:modelValue', value);
+    emit('select-value', '');
   },
 });
 
@@ -113,12 +114,12 @@ const isShowSelect = computed(() => {
 
 const openSelect = () => {
   inputFocus.value = true;
-  document.addEventListener('click', closeSelect);
+  document.addEventListener('mousedown', closeSelect);
 };
 
 const closeSelect = () => {
   inputFocus.value = false;
-  document.removeEventListener('click', closeSelect);
+  document.removeEventListener('mousedown', closeSelect);
 };
 
 const focusInput = () => {
@@ -138,7 +139,8 @@ const blurInput = (e) => {
 };
 
 const selectValue = (value) => {
-  inputModel.value = value;
+  inputModel.value = value.name;
+  emit('select-value', value.selector);
   closeSelect();
 };
 </script>
