@@ -100,3 +100,15 @@ h2{
   line-height: 40px;
   letter-spacing: -0.06em;
 }
+
+@include phone{
+  h1{
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  h2{
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
