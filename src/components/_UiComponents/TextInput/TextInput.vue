@@ -7,6 +7,7 @@
       {{ placeholder }}
     </p>
     <input
+      ref="input"
       v-model.trim="inputModel"
       :inputmode="number ? 'numeric' : 'text'"
       class="text-input__input"
