@@ -13,7 +13,7 @@
         border-color: var(--color-black);
       }
     }
-    
+
     &:hover {
       .tabs-button {
         &__hint {
@@ -24,8 +24,10 @@
   }
 
   @media (hover: none) {
-    &:active {
-      border-color: var(--color-black);
+    &:not(:disabled) {
+      &:active {
+        border-color: var(--color-black);
+      }
     }
   }
 
