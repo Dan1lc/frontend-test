@@ -8,6 +8,7 @@
     </p>
     <input
       v-model.trim="inputModel"
+      :inputmode="number ? 'numeric' : 'text'"
       class="text-input__input"
       type="text"
       :disabled="readOnly || disabled"
@@ -87,6 +88,10 @@ const props = defineProps({
   selectArray: {
     type: Array,
     default: () => [],
+  },
+  number: {
+    type: Boolean,
+    default: () => false,
   },
 });
 
