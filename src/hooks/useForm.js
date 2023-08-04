@@ -1,5 +1,5 @@
 import { onMounted, reactive, watch } from 'vue';
-import { required } from '@vuelidate/validators';
+import { required, minLength, integer } from '@vuelidate/validators';
 import { useVuelidate } from '@vuelidate/core';
 import debounce from '@helpers/debounce';
 
@@ -43,6 +43,8 @@ export default function useForm() {
     },
     postcode: {
       required,
+      minLength:minLength(6),
+      integer,
     },
   };
 
