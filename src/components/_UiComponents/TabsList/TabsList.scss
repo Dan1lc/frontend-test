@@ -8,3 +8,11 @@
     }
   }
 }
+
+@include phone{
+  .tabs-list {
+    &__header {
+      margin: 0 -4px 48px;
+    }
+  }
+}
