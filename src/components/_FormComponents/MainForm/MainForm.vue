@@ -92,7 +92,7 @@
       <UiButton
         class="main-form__button"
         :disabled="v$.$invalid"
-        @click="submitForm"
+        @click="sendForm"
       >
         Сохранить
       </UiButton>
@@ -119,7 +119,7 @@ onMounted(() => {
   }).mask(postcode.value.$refs.input);
 });
 
-const { formData, v$, clearForm } = useForm();
+const { formData, v$, clearForm, submitForm } = useForm();
 
 const {
   countriesList,
@@ -130,6 +130,7 @@ const {
   setStreetsSelector,
   streetsList,
   clearSelectors,
+  submitSelectors,
 } = useDadata(formData);
 
 const isClearDisable = computed(() => {
@@ -141,10 +142,11 @@ const clearAllValues = () => {
   clearSelectors();
 };
 
-const submitForm = async () => {
+const sendForm = async () => {
   v$.value.$touch();
   if (!v$.value.$error) {
-    alert('Форма успешно сохранена!');
+    submitSelectors();
+    submitForm();
   }
 };
 </script>

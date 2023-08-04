@@ -1,7 +1,6 @@
-import { onMounted, reactive, watch } from 'vue';
+import { onMounted, reactive } from 'vue';
 import { required, minLength, integer } from '@vuelidate/validators';
 import { useVuelidate } from '@vuelidate/core';
-import debounce from '@helpers/debounce';
 
 export default function useForm() {
   const formData = reactive({
@@ -51,6 +50,7 @@ export default function useForm() {
   const v$ = useVuelidate(formRules, formData);
 
   const clearForm = () => {
+    localStorage.removeItem('formData');
     Object.assign(formData, {
       name: '',
       number: '',
@@ -64,9 +64,10 @@ export default function useForm() {
     });
   };
 
-  watch(formData, debounce((value) => {
-    localStorage.setItem('formData', JSON.stringify(value));
-  }, 300));
+  const submitForm = () => {
+    localStorage.setItem('formData', JSON.stringify(formData));
+    alert('Форма успешно сохранена!');
+  };
 
   onMounted(() => {
     Object.assign(formData, JSON.parse(localStorage.getItem('formData')) || {});
@@ -76,5 +77,6 @@ export default function useForm() {
     formData,
     v$,
     clearForm,
+    submitForm,
   };
 }

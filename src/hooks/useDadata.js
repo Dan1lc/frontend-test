@@ -17,10 +17,12 @@ export default function useDadata(formData){
   const streetsList = computed(() => store.getters.streetsList);
 
   const clearSelectors = () => {
-    setRegionsSelector(JSON.parse(localStorage.getItem('regionsSelector')));
-    setLocalitiesSelector(JSON.parse(localStorage.getItem('localitiesSelector')));
-    setStreetsSelector(JSON.parse(localStorage.getItem('streetsSelector')));
+    localStorage.removeItem('regionsSelector');
+    localStorage.removeItem('localitiesSelector');
+    localStorage.removeItem('streetsSelector');
   };
+
+  const submitSelectors = (selector) => store.dispatch('submitSelectors', selector);
 
   onMounted(() => {
     setRegionsSelector(JSON.parse(localStorage.getItem('regionsSelector')) || '');
@@ -54,5 +56,6 @@ export default function useDadata(formData){
     setStreetsSelector,
     streetsList,
     clearSelectors,
+    submitSelectors,
   };
 }

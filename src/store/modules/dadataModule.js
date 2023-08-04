@@ -40,7 +40,6 @@ export default {
       }));
     },
     updateRegionsSelector(state, payload){
-      localStorage.setItem('regionsSelector', JSON.stringify(payload));
       state.regionsSelector = payload;
     },
     updateRegionsList(state, payload){
@@ -50,7 +49,6 @@ export default {
       }));
     },
     updateLocalitiesSelector(state, payload){
-      localStorage.setItem('localitiesSelector', JSON.stringify(payload));
       state.localitiesSelector = payload;
     },
     updateLocalitiesList(state, payload){
@@ -60,7 +58,6 @@ export default {
       }));
     },
     updateStreetsSelector(state, payload){
-      localStorage.setItem('streetsSelector', JSON.stringify(payload));
       state.streetsSelector = payload;
     },
     updateStreetsList(state, payload){
@@ -118,6 +115,11 @@ export default {
       }catch (error){
         console.log(error.message);
       }
+    },
+    submitSelectors({ state }){
+      localStorage.setItem('regionsSelector', JSON.stringify(state.regionsSelector));
+      localStorage.setItem('localitiesSelector', JSON.stringify(state.localitiesSelector));
+      localStorage.setItem('streetsSelector', JSON.stringify(state.streetsSelector));
     },
   },
   getters: {
