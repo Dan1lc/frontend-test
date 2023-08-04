@@ -1,7 +1,7 @@
 <template>
   <ul
     class="select-list"
-    @click.stop
+    @mousedown.stop
   >
     <li
       v-for="(item,k) in selectArray"
