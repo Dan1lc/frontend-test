@@ -81,9 +81,6 @@
             <TabsItem title="Основное">
               Основное
             </TabsItem>
-            <TabsItem title="Основное 2">
-              Основное 2
-            </TabsItem>
             <TabsItem
               title="Дополнительно"
               hint-text="Сначала заполните: Основное"
