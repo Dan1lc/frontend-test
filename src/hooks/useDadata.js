@@ -47,16 +47,12 @@ export default function useDadata(formData){
 
   return {
     countriesList,
-    //
     setRegionsSelector,
     regionsList,
-    //
     setLocalitiesSelector,
     localitiesList,
-    //
     setStreetsSelector,
     streetsList,
-    //
     clearSelectors,
   };
 }
