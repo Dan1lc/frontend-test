@@ -13,7 +13,7 @@
         @click="$emit('select-value', item)"
         @blur="blurButton"
       >
-        {{ item }}
+        {{ item.name }}
       </button>
     </li>
   </ul>
