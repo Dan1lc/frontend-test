@@ -19,3 +19,9 @@
     }
   }
 }
+
+@include phone{
+  .select-list {
+    max-height: 206px;
+  }
+}
