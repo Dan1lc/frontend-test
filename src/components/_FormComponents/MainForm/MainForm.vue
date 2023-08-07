@@ -81,21 +81,23 @@
       </ul>
     </div>
     <div class="main-form__actions">
-      <UiButton
-        class="main-form__button"
-        secondary
-        :disabled="isClearDisable"
-        @click="clearAllValues"
-      >
-        Отменить
-      </UiButton>
-      <UiButton
-        class="main-form__button"
-        :disabled="v$.$invalid"
-        @click="sendForm"
-      >
-        Сохранить
-      </UiButton>
+      <div class="main-form__actions-inner">
+        <UiButton
+          class="main-form__button"
+          secondary
+          :disabled="isClearDisable"
+          @click="clearAllValues"
+        >
+          Отменить
+        </UiButton>
+        <UiButton
+          class="main-form__button"
+          :disabled="v$.$invalid"
+          @click="sendForm"
+        >
+          Сохранить
+        </UiButton>
+      </div>
     </div>
   </form>
 </template>

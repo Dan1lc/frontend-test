@@ -33,8 +33,12 @@
   }
 
   &__actions{
-    max-width: calc(50% - 8px);
-    margin:0 0 128px auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__actions-inner{
+    min-width: calc(50% - 8px);
     padding-top: 16px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
