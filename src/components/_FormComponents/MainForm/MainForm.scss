@@ -33,51 +33,11 @@
   }
 
   &__actions{
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 -8px;
-  }
-
-  &__button{
-    margin: 16px 8px;
-    width: 100%;
-    max-width: 450px;
-  }
-}
-
-@include phone{
-  .main-form{
-    &__inner{
-      border-bottom: unset;
-    }
-
-    &__list{
-      margin-bottom: 32px;
-
-      &--last{
-        margin-bottom:  0;
-      }
-    }
-
-    &__list-item{
-      &--double{
-        grid-template-columns: 1fr;
-        grid-gap: 32px;
-      }
-    }
-
-    &__actions{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 16px;
-      margin: 32px 0;
-    }
-
-    &__button{
-      margin: unset;
-      width: auto;
-      max-width:unset;
-      padding: 20px;
-    }
+    max-width: calc(50% - 8px);
+    margin:0 0 128px auto;
+    padding-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
   }
 }
