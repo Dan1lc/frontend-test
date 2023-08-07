@@ -10,7 +10,7 @@
             <MainForm />
           </TabsItem>
           <TabsItem
-            title="Дополнительно"
+            title="Перечень ПСД"
             hint-text="Сначала заполните: Основное"
             disabled
           />
@@ -32,7 +32,7 @@ const { setBreadcrumbsData } = useBreadcrumbs();
 onMounted(() => {
   setBreadcrumbsData([
     {
-      name: 'Дополнительно',
+      name: 'Проектные данные',
     },
   ]);
 });
