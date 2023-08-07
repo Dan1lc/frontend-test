@@ -4,7 +4,9 @@
     :class="classes"
     :disabled="disabled || active"
   >
-    <slot />
+    <span class="tabs-button__inner">
+      <slot />
+    </span>
     <span
       v-if="disabled && hintText"
       class="tabs-button__hint"

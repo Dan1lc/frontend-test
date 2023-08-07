@@ -24,6 +24,7 @@
   &:disabled{
     background-color: var(--color-gray-2);
     color: var(--color-gray);
+    opacity: .5;
     cursor: not-allowed;
   }
 
@@ -48,8 +49,9 @@
     }
 
     &:disabled{
-      color: var(--color-gray-opacity);
-      border-color: var(--color-gray-2-opacity);
+      opacity: .5;
+      color: var(--color-gray);
+      border-color: var(--color-gray-2);
       background-color: var(--color-white);
     }
   }

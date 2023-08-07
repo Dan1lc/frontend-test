@@ -1,16 +1,14 @@
 .tabs-button {
   position: relative;
-  padding: 15px 24px;
-  background-color: var(--color-white);
-  color: var(--color-black);
-  border-radius: 8px;
-  border: 1px solid var(--color-gray-2);
-  transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
 
   @media (hover: hover) {
     &:not(:disabled) {
       &:hover {
-        border-color: var(--color-black);
+        .tabs-button {
+          &__inner{
+            border-color: var(--color-black);
+          }
+        }
       }
     }
 
@@ -26,26 +24,53 @@
   @media (hover: none) {
     &:not(:disabled) {
       &:active {
-        border-color: var(--color-black);
+        .tabs-button {
+          &__inner{
+            border-color: var(--color-black);
+          }
+        }
       }
     }
   }
 
   &:focus-visible {
-    outline: 4px solid var(--color-black);
+    .tabs-button {
+      &__inner{
+        outline: 4px solid var(--color-black);
+      }
+    }
   }
 
   &--disabled {
-    color: var(--color-gray-opacity);
-    border-color: var(--color-gray-2-opacity);
-    cursor: not-allowed;
+    .tabs-button {
+      &__inner{
+        cursor: not-allowed;
+        color: var(--color-gray);
+        border-color: var(--color-gray-2);
+        opacity: .5;
+      }
+    }
   }
 
   &--active {
-    border-color: var(--color-black);
-    background-color: var(--color-black);
-    color: var(--color-white);
-    cursor: default;
+    .tabs-button {
+      &__inner{
+        border-color: var(--color-black);
+        background-color: var(--color-black);
+        color: var(--color-white);
+        cursor: default;
+      }
+    }
+  }
+
+  &__inner{
+    display: inline-block;
+    padding: 15px 24px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-radius: 8px;
+    border: 1px solid var(--color-gray-2);
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
   }
 
   &__hint {
@@ -61,6 +86,7 @@
     line-height: 16px;
     color: var(--color-white);
     white-space: nowrap;
+    pointer-events: none;
 
     &:after {
       content: '';
