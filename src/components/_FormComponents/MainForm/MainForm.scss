@@ -10,7 +10,7 @@
   }
 
   &__list{
-    max-width: 920px;
+    max-width: calc(50% - 8px);
     margin-bottom: 96px;
 
     li{
