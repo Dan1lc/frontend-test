@@ -70,7 +70,7 @@
             placeholder="Корпус"
           />
         </li>
-        <li>
+        <li class="main-form__list-item main-form__list-item--double">
           <TextInput
             ref="postcode"
             v-model="v$.postcode.$model"
