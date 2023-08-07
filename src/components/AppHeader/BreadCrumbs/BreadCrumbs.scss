@@ -1,9 +1,9 @@
 .bread-crumbs {
-  padding: 16px 0;
   display: flex;
 
   li {
     display: flex;
+    align-items: center;
   }
 
   &__separator {
