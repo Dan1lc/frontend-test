@@ -1,24 +1,17 @@
-# frontend-test
+# Тестовое задание для компании Cobalt
 
-## Project setup
+### Стек
+- Фреймворк - Vue3 с использованием Composition API
+- Сборщик - Vue CLI
+- Менеджер состояний -  Vuex
+- Линтер - ESLint
+
+### Установка проекта
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск проекта
 ```
 yarn serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
